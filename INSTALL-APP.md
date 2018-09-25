@@ -1,0 +1,1 @@
+The Exomeseq docker should work "out of the box" but we recommend that you visit the Galaxy Training portal to http://galaxyproject.github.io/training-material/ to learn more about Galaxy. The Gitter-chat channel linked on the website is also a very valuable resource for learning more about Galaxy. 
