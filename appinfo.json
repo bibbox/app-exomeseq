@@ -1,0 +1,10 @@
+    {
+            "name": "Galaxy, Exome sequencing, NGS preprocessing and GWAS",
+            "short_name": "Galaxy Exome seq",
+            "version": "V.1.0",
+            "description": "A Galaxy server for NGS preprocessing, exome sequencing and GWAS",
+            "short_description": "A Galaxy server for NGS data",
+            "catalogue_url": "https://github.com/bibbox/exomeseq",
+            "application_url": "https://quay.io/repository/bgruening/galaxy-exome-seq",
+            "tags": ["NGS", "Exome", "preprocessing"]
+    }
