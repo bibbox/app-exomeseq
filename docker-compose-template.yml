@@ -1,0 +1,15 @@
+    version: '1'
+
+    networks:
+        bibbox-default-network:
+          external: true
+    services:
+    
+       $$INSTANCE-exomeseq:
+        image: quay.io/bgruening/galaxy-ngs-preprocessing:18.05
+        - GALAXY_CONFIG_BRAND=ExomeSeq
+        - GALAXY_CONFIG_FTP_UPLOAD_DIR=/export/ftp
+        - GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True
+        - GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True
+        - GALAXY_CONFIG_ENABLE_USER_DELETION=True
+        - GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True
