@@ -1,4 +1,4 @@
-    version: '1'
+    version: '2'
 
     networks:
         bibbox-default-network:
@@ -6,10 +6,33 @@
     services:
     
        $$INSTANCE-exomeseq:
-        image: quay.io/bgruening/galaxy-ngs-preprocessing:18.05
-        - GALAXY_CONFIG_BRAND=ExomeSeq
-        - GALAXY_CONFIG_FTP_UPLOAD_DIR=/export/ftp
-        - GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True
-        - GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True
-        - GALAXY_CONFIG_ENABLE_USER_DELETION=True
-        - GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True
+        image: quay.io/bgruening/galaxy-exome-seq:18.05
+        container_name: $$INSTANCE-exomeseq
+        environment:
+          GALAXY_CONFIG_FTP_UPLOAD_DIR:/export/ftp
+          GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE:True
+          GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE:True         
+          GALAXY_CONFIG_ADMIN_USERS: §§ADMIN_USERS
+          GALAXY_CONFIG_MASTER_API_KEY: §§API_KEY
+          GALAXY_CONFIG_BRAND: $$ExomeSeq
+
+
+    ports:
+      - "§§PORT1:80" 
+      - "§§PORT2:21" 
+      - "§§PORT3:22"
+
+    volumes_from: 
+      - §§INSTANCE-galaxy-store
+
+    depends_on:
+      - §§INSTANCE-galaxy-store
+
+ 
+  §§INSTANCE-galaxy-store:
+    image: bgruening/galaxy-stable
+    container_name: §§INSTANCE-exomeseq
+    volumes:
+      - ./data/export:/export/
+    command: "/bin/true"
+     
