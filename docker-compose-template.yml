@@ -9,9 +9,9 @@
         image: quay.io/bgruening/galaxy-exome-seq:18.05
         container_name: $$INSTANCE-exomeseq
         environment:
-          GALAXY_CONFIG_FTP_UPLOAD_DIR:/export/ftp
-          GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE:True
-          GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE:True         
+          GALAXY_CONFIG_FTP_UPLOAD_DIR: /export/ftp
+          GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE: True
+          GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE: True         
           GALAXY_CONFIG_ADMIN_USERS: §§ADMIN_USERS
           GALAXY_CONFIG_MASTER_API_KEY: §§API_KEY
           GALAXY_CONFIG_BRAND: $$ExomeSeq
